@@ -40,40 +40,23 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
+          style={{
+            marginBottom: rhythm(2)
+          }}
         />
+        <div style={{
+          textAlign: `right`,
+        }}>
+          <Link to={`https://github.com/s-osa/blog.osa.in.net/blob/master/content/blog${post.fields.slug}index.md`} target={"_blank"}>
+            Fix typo
+          </Link>
+        </div>
         <hr
           style={{
-            marginBottom: rhythm(1)
+            marginBottom: rhythm(1/2)
           }}
         />
       </article>
-
-      <nav>
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Layout>
   )
 }
@@ -94,6 +77,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "YYYY-MM-DD")
+      }
+      fields {
+        slug
       }
     }
   }
