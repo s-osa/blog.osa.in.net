@@ -3,28 +3,27 @@ module.exports = {
     title: `blog.osa.in.net`,
     author: {
       name: `OSA Shunsuke`,
-      summary: `who lives and works in San Francisco building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `思考の dump`,
     siteUrl: `https://blog.osa.in.net/`,
     social: {
-      twitter: `s_osa_`,
-    },
+      twitter: `s_osa_`
+    }
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
+        name: `blog`
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/assets`,
-        name: `assets`,
-      },
+        name: `assets`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -33,20 +32,20 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
-            },
+              maxWidth: 590
+            }
           },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
+          `gatsby-remark-smartypants`
+        ]
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -54,7 +53,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
+      }
     },
     `gatsby-plugin-feed`,
     {
@@ -66,18 +65,24 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/icon.png`,
-      },
+        icon: `content/assets/icon.png`
+      }
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+        pathToConfigModule: `src/utils/typography`
+      }
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "blog.osa.in.net"
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ],
+  ]
 }
