@@ -1,7 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
@@ -23,7 +22,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             itemProp="headline"
             style={{
               marginTop: rhythm(1),
-              marginBottom: 0,
+              marginBottom: 0
             }}
           >
             {post.frontmatter.title}
@@ -32,7 +31,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             style={{
               ...scale(-1 / 5),
               display: `block`,
-              marginBottom: rhythm(1),
+              marginBottom: rhythm(1)
             }}
           >
             {post.frontmatter.date}
@@ -44,12 +43,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         />
         <hr
           style={{
-            marginBottom: rhythm(1),
+            marginBottom: rhythm(1)
           }}
         />
-        <footer>
-          <Bio />
-        </footer>
       </article>
 
       <nav>
@@ -59,7 +55,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             flexWrap: `wrap`,
             justifyContent: `space-between`,
             listStyle: `none`,
-            padding: 0,
+            padding: 0
           }}
         >
           <li>
@@ -97,8 +93,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
-        description
+        date(formatString: "YYYY-MM-DD")
       }
     }
   }
