@@ -52,14 +52,22 @@ const Layout = ({ location, title, children }) => {
         marginLeft: `auto`,
         marginRight: `auto`,
         maxWidth: rhythm(30),
-        padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`
+        padding: `${rhythm(1)} ${rhythm(3 / 4)}`
       }}
     >
       <header>{header}</header>
       <main>{children}</main>
 
-      <footer>
-        © 2020-{new Date().getFullYear()} OSA Shunsuke
+      <footer style={{
+        textAlign: `center`,
+        color: `#666666`,
+        fontSize: rhythm(1 / 2)
+      }}>
+        © {new Date().getFullYear()}
+        {" "}
+        <Link to={"https://osa.in.net/"}>
+          OSA Shunsuke
+        </Link>
       </footer>
     </div>
   )
