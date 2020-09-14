@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `blog.osa.in.net`,
     author: {
-      name: `OSA Shunsuke`,
+      name: `OSA Shunsuke`
     },
     description: `思考の dump`,
     siteUrl: `https://blog.osa.in.net/`,
@@ -41,7 +41,8 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`
             }
           },
-          `gatsby-remark-prismjs`,
+          `gatsby-remark-autolink-headers`,
+          `gatsby-remark-prismjs`, // should be placed after `gatsby-remark-autolink-headers`
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`
         ]
@@ -52,7 +53,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-51724899-6`,
+        trackingId: `UA-51724899-6`
       }
     },
     `gatsby-plugin-feed`,
