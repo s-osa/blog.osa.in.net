@@ -3,12 +3,6 @@ import theme from 'typography-theme-github'
 
 theme.headerFontFamily = ['M PLUS Rounded 1c', 'sans-serif']
 theme.bodyFontFamily = ['M PLUS Rounded 1c', 'sans-serif']
-theme.googleFonts = [
-  {
-    name: 'M+PLUS+Rounded+1c',
-    styles: ['400'],
-  }
-]
 
 const typography = new Typography(theme)
 

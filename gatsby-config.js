@@ -77,6 +77,14 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['M PLUS Rounded 1c:300,700']
+        }
+      }
+    },
+    {
       resolve: `gatsby-plugin-s3`,
       options: {
         bucketName: "blog.osa.in.net"
