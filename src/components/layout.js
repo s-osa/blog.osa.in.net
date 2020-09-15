@@ -58,6 +58,13 @@ const Layout = ({ location, title, children }) => {
       <header>{header}</header>
       <main>{children}</main>
 
+      <hr
+        style={{
+          marginTop: rhythm(1 / 2),
+          marginBottom: rhythm(1 / 2)
+        }}
+      />
+
       <footer style={{
         textAlign: `center`,
         color: `#666666`,

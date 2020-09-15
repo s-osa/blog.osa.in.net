@@ -57,11 +57,6 @@ const BlogPostTemplate = ({ data, location }) => {
             Revisions
           </Link>
         </div>
-        <hr
-          style={{
-            marginBottom: rhythm(1/2)
-          }}
-        />
       </article>
     </Layout>
   )
