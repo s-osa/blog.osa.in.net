@@ -45,9 +45,16 @@ const BlogPostTemplate = ({ data, location }) => {
         />
         <div style={{
           textAlign: `right`,
+          fontSize: rhythm(1 / 2)
         }}>
-          <Link to={`https://github.com/s-osa/blog.osa.in.net/blob/master/content/blog${post.fields.slug}index.md`} target={"_blank"}>
-            Fix typo
+          <Link to={`https://github.com/s-osa/blog.osa.in.net/edit/master/content/blog${post.fields.slug}index.md`}
+                target={"_blank"}>
+            Propose changes
+          </Link>
+          {" / "}
+          <Link to={`https://github.com/s-osa/blog.osa.in.net/commits/master/content/blog${post.fields.slug}index.md`}
+                target={"_blank"}>
+            Revisions
           </Link>
         </div>
         <hr
