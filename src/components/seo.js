@@ -28,6 +28,7 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const imageURL = `https://blog.osa.in.net/icons/icon-512x512.png`
 
   return (
     <Helmet
@@ -54,12 +55,20 @@ const SEO = ({ description, lang, meta, title }) => {
           content: `website`
         },
         {
+          property: `og:image`,
+          content: imageURL
+        },
+        {
           name: `twitter:card`,
           content: `summary`
         },
         {
           name: `twitter:creator`,
           content: site.siteMetadata.social.twitter
+        },
+        {
+          property: `og:image`,
+          content: imageURL
         },
         {
           name: `twitter:title`,
