@@ -11,8 +11,6 @@ const Layout = ({ location, title, children }) => {
     header = (
       <h1
         style={{
-          ...scale(1.5),
-          marginBottom: rhythm(1.5),
           marginTop: 0
         }}
       >
