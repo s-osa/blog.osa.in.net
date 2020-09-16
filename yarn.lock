@@ -6760,6 +6760,14 @@ gatsby-telemetry@^1.3.31:
     node-fetch "^2.6.0"
     uuid "^8.3.0"
 
+gatsby-transformer-remark-plaintext@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-remark-plaintext/-/gatsby-transformer-remark-plaintext-1.0.3.tgz#46f2fbbd81259f2d7a25af7648409ff82cc1c0b4"
+  integrity sha512-V6nU03WKW65Xy5DyQPeVSMf5KVNoXX2yHbq53H0u1a/MkakG3osNTDWiTDxVQ8kg9OZ/04Dblczg9QxRnLjrYA==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    strip-markdown "^3.0.2"
+
 gatsby-transformer-remark@^2.8.33:
   version "2.8.33"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.8.33.tgz#a215c7080653cb76d139a498daa00a267fde0fd8"
@@ -13692,6 +13700,11 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
+
+strip-markdown@^3.0.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/strip-markdown/-/strip-markdown-3.1.2.tgz#172f6f89f9a98896e65a65422e0507f2bbac1667"
+  integrity sha512-NjwW6CEefesmHQPs7lof/lgnSriqUnRNOWpnrNPq9A7/yOCdnhaB7DcxlhYuN7WiiRUe349aitAsTQ/ajM9Dmw==
 
 strip-outer@^1.0.0:
   version "1.0.1"

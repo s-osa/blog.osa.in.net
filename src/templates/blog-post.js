@@ -26,15 +26,29 @@ const BlogPostTemplate = ({ data, location }) => {
           >
             {post.frontmatter.title}
           </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1)
-            }}
-          >
-            {post.frontmatter.date}
-          </p>
+          <div style={{
+            ...scale(-1 / 5),
+            width: `100%`,
+            display: `table`,
+            marginBottom: rhythm(1)
+          }}>
+            <p
+              style={{
+                display: `table-cell`,
+                textAlign: `left`
+              }}
+            >
+              {post.frontmatter.date}
+            </p>
+            <p
+              style={{
+                display: `table-cell`,
+                textAlign: `right`
+              }}
+            >
+              {post.plainText.length.toLocaleString()}文字
+            </p>
+          </div>
         </header>
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
@@ -75,6 +89,7 @@ export const pageQuery = graphql`
       id
       excerpt(pruneLength: 160)
       html
+      plainText
       frontmatter {
         title
         date(formatString: "YYYY-MM-DD")
