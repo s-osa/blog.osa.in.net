@@ -34,6 +34,23 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
+## 非標準 claim について
+
+*2020-09-20 追記*
+
+omniauth\_openid\_connect で非標準 claim を読むためには v0.3.5 以上を使う必要がある。<br>
+対象の差分：https://github.com/m0n9oose/omniauth_openid_connect/pull/61/files
+
+たとえば、Azure AD で assign した role が入っている `roles` を読む場合のサンプルコードは以下のような感じ。
+
+```ruby
+auth_hash = request.env['omniauth.auth']
+raw_attributes = auth_hash.extra.raw_info
+roles = raw_attributes['roles'] # @return [Array<String>]
+```
+
+`auth_hash`, `extra` までは OmniAuth::AuthHash なのでメソッド呼び出しでアクセスできるが、`raw_info` の返り値は ActiveSupport::HashWithIndifferentAccess になっていてメソッド呼び出し形式では参照できないので注意。
+
 # 検討した他の選択肢
 
 ## omniauth-azure-activedirectory
