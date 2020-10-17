@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "blog.osa.in.net",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Osa's blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "OSA Shunsuke <hhelibebcnofnenamg@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/s-osa/blog.osa.in.net/issues"
   },
   "dependencies": {
     "gatsby": "^2.24.54",
@@ -43,14 +43,14 @@
   "devDependencies": {
     "prettier": "2.1.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/s-osa/blog.osa.in.net/",
   "keywords": [
     "gatsby"
   ],
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git@github.com:s-osa/blog.osa.in.net.git"
   },
   "scripts": {
     "build": "gatsby build",
