@@ -7,7 +7,7 @@ Azure AD を OpenID Connect の OP (OpenID Provider) とした上で、RP (Relyi
 
 OmniAuth を使う前提で、どの strategy を使うかという話。
 
-# 結論
+## 結論
 
 omniauth\_openid\_connect を使った。<br>
 https://github.com/m0n9oose/omniauth_openid_connect
@@ -34,7 +34,7 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 ```
 
-## 非標準 claim について
+### 非標準 claim について
 
 *2020-09-20 追記*
 
@@ -51,16 +51,16 @@ roles = raw_attributes['roles'] # @return [Array<String>]
 
 `auth_hash`, `extra` までは OmniAuth::AuthHash なのでメソッド呼び出しでアクセスできるが、`raw_info` の返り値は ActiveSupport::HashWithIndifferentAccess になっていてメソッド呼び出し形式では参照できないので注意。
 
-# 検討した他の選択肢
+## 検討した他の選択肢
 
-## omniauth-azure-activedirectory
+### omniauth-azure-activedirectory
 
 https://github.com/AzureAD/omniauth-azure-activedirectory
 
 Azure AD 公式なのではじめに当たってみた。
 最終更新が5年前なのが気になりつつ単に枯れてるだけかもしれないと思って触ってみたが、implicit grant しか対応してなくて終了。
 
-## omniauth-azure-oauth2
+### omniauth-azure-oauth2
 
 https://github.com/marknadig/omniauth-azure-oauth2
 
