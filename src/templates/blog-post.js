@@ -15,7 +15,7 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article itemScope itemType="http://schema.org/Article">
+      <article itemScope itemType="http://schema.org/Article" className="blog-post">
         <header>
           <h1
             itemProp="headline"
