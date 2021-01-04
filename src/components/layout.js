@@ -69,7 +69,7 @@ const Layout = ({ location, title, children }) => {
         color: `#666666`,
         fontSize: rhythm(1 / 2)
       }}>
-        © {new Date().getFullYear()}
+        © 2020-{new Date().getFullYear()}
         {" "}
         <Link to={"https://osa.in.net/"}>
           OSA Shunsuke
