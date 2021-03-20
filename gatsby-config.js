@@ -41,6 +41,7 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`
             }
           },
+          `gatsby-remark-katex`,
           `gatsby-remark-autolink-headers`,
           `gatsby-remark-prismjs`, // should be placed after `gatsby-remark-autolink-headers`
           `gatsby-remark-copy-linked-files`,
@@ -48,6 +49,7 @@ module.exports = {
         ]
       }
     },
+
     `gatsby-transformer-remark-plaintext`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
