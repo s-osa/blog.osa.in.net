@@ -1,12 +1,12 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, PageProps } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data, location }) => {
+  const siteTitle = data.site!.siteMetadata!.title!
   const posts = data.allMarkdownRemark.edges
 
   return (
@@ -14,10 +14,12 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" />
 
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
+        const frontMatter = node.frontmatter!
+        const title = frontMatter.title || node.fields!.slug
+
         return (
           <article
-            key={node.fields.slug}
+            key={node.fields!.slug}
             itemScope
             itemType="http://schema.org/Article"
           >
@@ -27,10 +29,10 @@ const BlogIndex = ({ data, location }) => {
                   marginBottom: rhythm(1 / 4)
                 }}
               >
-                <span style={{ color: `#666666`, marginRight: `1rem` }}>{node.frontmatter.date}</span>
+                <span style={{ color: `#666666`, marginRight: `1rem` }}>{frontMatter.date}</span>
                 <Link
                   style={{ boxShadow: `none` }}
-                  to={node.fields.slug}
+                  to={node.fields!.slug!}
                   itemProp="url"
                 >
                   <span itemProp="headline">{title}</span>

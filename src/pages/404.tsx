@@ -1,11 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { PageProps } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const NotFoundPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
+const NotFoundPage: React.FC<PageProps<GatsbyTypes.NotFoundPageQuery>> = ({ data, location }) => {
+  const siteTitle = data.site!.siteMetadata!.title!
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -14,7 +15,7 @@ const NotFoundPage = ({ data, location }) => {
         textAlign: `center`,
         border: `none`,
         margin: `10rem 0`,
-        color: `#888`,
+        color: `#888`
       }}>404 Not Found</h1>
     </Layout>
   )

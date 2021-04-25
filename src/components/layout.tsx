@@ -1,10 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
+import { WindowLocation } from "@reach/router"
 
 import "./common.scss"
 import { rhythm } from "../utils/typography"
 
-const Layout = ({ location, title, children }) => {
+const Layout: React.FC<{ title: string, location: WindowLocation<unknown> }> = ({ location, title, children }) => {
   const rootPath = `/`
   let header
 

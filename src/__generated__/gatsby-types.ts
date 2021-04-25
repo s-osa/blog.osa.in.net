@@ -2046,6 +2046,8 @@ type Query_allDirectoryArgs = {
 type Query_siteArgs = {
   buildTime: Maybe<DateQueryOperatorInput>;
   siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  port: Maybe<IntQueryOperatorInput>;
+  host: Maybe<StringQueryOperatorInput>;
   polyfill: Maybe<BooleanQueryOperatorInput>;
   pathPrefix: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
@@ -2185,6 +2187,8 @@ type Query_allSitePluginArgs = {
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
+  readonly port: Maybe<Scalars['Int']>;
+  readonly host: Maybe<Scalars['String']>;
   readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly pathPrefix: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -2389,6 +2393,8 @@ type SiteFieldsEnum =
   | 'siteMetadata.author.name'
   | 'siteMetadata.siteUrl'
   | 'siteMetadata.social.twitter'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2481,6 +2487,8 @@ type SiteFieldsEnum =
 type SiteFilterInput = {
   readonly buildTime: Maybe<DateQueryOperatorInput>;
   readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>;
+  readonly port: Maybe<IntQueryOperatorInput>;
+  readonly host: Maybe<StringQueryOperatorInput>;
   readonly polyfill: Maybe<BooleanQueryOperatorInput>;
   readonly pathPrefix: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
@@ -3439,32 +3447,6 @@ type WebPOptions = {
   readonly quality: Maybe<Scalars['Int']>;
 };
 
-type NotFoundPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type NotFoundPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-type SEOQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
-      Pick<SiteSiteMetadata, 'title' | 'description'>
-      & { readonly social: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
-    )> }> };
-
-type UsingTypescriptQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type UsingTypescriptQuery = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
-
-type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type BlogIndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
-        Pick<MarkdownRemark, 'excerpt'>
-        & { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title'>> }
-      ) }> } };
-
 type BlogPostBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
@@ -3474,6 +3456,37 @@ type BlogPostBySlugQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe
     Pick<MarkdownRemark, 'id' | 'excerpt' | 'html' | 'plainText'>
     & { readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date'>>, readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>> }
   )> };
+
+type NotFoundPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type NotFoundPageQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+type BlogIndexQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BlogIndexQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: (
+        Pick<MarkdownRemark, 'excerpt'>
+        & { readonly fields: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, readonly frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'title'>> }
+      ) }> } };
+
+type UsingTypescriptQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type UsingTypescriptQuery = { readonly site: Maybe<Pick<Site, 'buildTime'>> };
+
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
+type SEOQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SEOQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<(
+      Pick<SiteSiteMetadata, 'title' | 'description'>
+      & { readonly social: Maybe<Pick<SiteSiteMetadataSocial, 'twitter'>> }
+    )> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

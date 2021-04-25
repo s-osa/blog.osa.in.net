@@ -1,4 +1,5 @@
 import Typography from 'typography'
+// @ts-ignore: No type file published
 import theme from 'typography-theme-github'
 
 theme.headerFontFamily = ['M PLUS Rounded 1c', 'sans-serif']
