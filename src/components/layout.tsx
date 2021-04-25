@@ -5,7 +5,7 @@ import "./common.scss"
 import { rhythm } from "../utils/typography"
 
 const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+  const rootPath = `/`
   let header
 
   if (location.pathname === rootPath) {
