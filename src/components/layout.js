@@ -71,9 +71,9 @@ const Layout = ({ location, title, children }) => {
       }}>
         © 2020-{new Date().getFullYear()}
         {" "}
-        <Link to={"https://osa.in.net/"}>
+        <a href={"https://osa.in.net/"} target="_blank" rel="noreferrer noopener">
           OSA Shunsuke
-        </Link>
+        </a>
       </footer>
     </div>
   )
