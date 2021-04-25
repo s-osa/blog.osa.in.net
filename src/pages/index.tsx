@@ -5,7 +5,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
 
-const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data, location }) => {
+const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({
+  data,
+  location,
+}) => {
   const siteTitle = data.site!.siteMetadata!.title!
   const posts = data.allMarkdownRemark.edges
 
@@ -26,10 +29,12 @@ const BlogIndex: React.FC<PageProps<GatsbyTypes.BlogIndexQuery>> = ({ data, loca
             <header>
               <h3
                 style={{
-                  marginBottom: rhythm(1 / 4)
+                  marginBottom: rhythm(1 / 4),
                 }}
               >
-                <span style={{ color: `#666666`, marginRight: `1rem` }}>{frontMatter.date}</span>
+                <span style={{ color: `#666666`, marginRight: `1rem` }}>
+                  {frontMatter.date}
+                </span>
                 <Link
                   style={{ boxShadow: `none` }}
                   to={node.fields!.slug!}

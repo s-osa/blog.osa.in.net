@@ -1,9 +1,9 @@
-import Typography from 'typography'
+import Typography from "typography"
 // @ts-ignore: No type file published
-import theme from 'typography-theme-github'
+import theme from "typography-theme-github"
 
-theme.headerFontFamily = ['M PLUS Rounded 1c', 'sans-serif']
-theme.bodyFontFamily = ['M PLUS Rounded 1c', 'sans-serif']
+theme.headerFontFamily = ["M PLUS Rounded 1c", "sans-serif"]
+theme.bodyFontFamily = ["M PLUS Rounded 1c", "sans-serif"]
 
 const typography = new Typography(theme)
 

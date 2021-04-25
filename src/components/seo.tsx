@@ -10,10 +10,10 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 type Props = {
-  description?: string;
-  lang?: string;
-  meta?: HTMLMetaElement[];
-  title: string;
+  description?: string
+  lang?: string
+  meta?: HTMLMetaElement[]
+  title: string
 }
 
 const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
@@ -40,51 +40,51 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
   return (
     <Helmet
       htmlAttributes={{
-        lang
+        lang,
       }}
       title={title}
       titleTemplate={`%s - ${siteMetadata.title}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: `og:title`,
-          content: title
+          content: title,
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: `og:type`,
-          content: `website`
+          content: `website`,
         },
         {
           property: `og:image`,
-          content: imageURL
+          content: imageURL,
         },
         {
           name: `twitter:card`,
-          content: `summary`
+          content: `summary`,
         },
         {
           name: `twitter:creator`,
-          content: siteMetadata.social!.twitter
+          content: siteMetadata.social!.twitter,
         },
         {
           property: `og:image`,
-          content: imageURL
+          content: imageURL,
         },
         {
           name: `twitter:title`,
-          content: title
+          content: title,
         },
         {
           name: `twitter:description`,
-          content: metaDescription
-        }
+          content: metaDescription,
+        },
       ].concat(meta!)}
     />
   )
@@ -93,7 +93,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
 SEO.defaultProps = {
   lang: `ja`,
   meta: [],
-  description: ``
+  description: ``,
 }
 
 export default SEO
