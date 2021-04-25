@@ -45,7 +45,8 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "2.1.1"
+    "prettier": "2.1.1",
+    "typescript": "^4.2.4"
   },
   "homepage": "https://github.com/s-osa/blog.osa.in.net/",
   "keywords": [
