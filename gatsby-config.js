@@ -25,6 +25,7 @@ module.exports = {
         name: `assets`
       }
     },
+    `gatsby-plugin-typegen`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
