@@ -1960,6 +1960,8 @@ declare namespace GatsbyTypes {
   type Query_siteArgs = {
     buildTime: Maybe<DateQueryOperatorInput>
     siteMetadata: Maybe<SiteSiteMetadataFilterInput>
+    port: Maybe<IntQueryOperatorInput>
+    host: Maybe<StringQueryOperatorInput>
     polyfill: Maybe<BooleanQueryOperatorInput>
     pathPrefix: Maybe<StringQueryOperatorInput>
     id: Maybe<StringQueryOperatorInput>
@@ -1981,15 +1983,15 @@ declare namespace GatsbyTypes {
     internalComponentName: Maybe<StringQueryOperatorInput>
     componentChunkName: Maybe<StringQueryOperatorInput>
     matchPath: Maybe<StringQueryOperatorInput>
-    id: Maybe<StringQueryOperatorInput>
-    parent: Maybe<NodeFilterInput>
-    children: Maybe<NodeFilterListInput>
-    internal: Maybe<InternalFilterInput>
     isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>
     context: Maybe<SitePageContextFilterInput>
     pluginCreator: Maybe<SitePluginFilterInput>
     pluginCreatorId: Maybe<StringQueryOperatorInput>
     componentPath: Maybe<StringQueryOperatorInput>
+    id: Maybe<StringQueryOperatorInput>
+    parent: Maybe<NodeFilterInput>
+    children: Maybe<NodeFilterListInput>
+    internal: Maybe<InternalFilterInput>
   }
 
   type Query_allSitePageArgs = {
@@ -2088,6 +2090,8 @@ declare namespace GatsbyTypes {
   type Site = Node & {
     readonly buildTime: Maybe<Scalars["Date"]>
     readonly siteMetadata: Maybe<SiteSiteMetadata>
+    readonly port: Maybe<Scalars["Int"]>
+    readonly host: Maybe<Scalars["String"]>
     readonly polyfill: Maybe<Scalars["Boolean"]>
     readonly pathPrefix: Maybe<Scalars["String"]>
     readonly id: Scalars["ID"]
@@ -2286,6 +2290,8 @@ declare namespace GatsbyTypes {
     | "siteMetadata.author.name"
     | "siteMetadata.siteUrl"
     | "siteMetadata.social.twitter"
+    | "port"
+    | "host"
     | "polyfill"
     | "pathPrefix"
     | "id"
@@ -2378,6 +2384,8 @@ declare namespace GatsbyTypes {
   type SiteFilterInput = {
     readonly buildTime: Maybe<DateQueryOperatorInput>
     readonly siteMetadata: Maybe<SiteSiteMetadataFilterInput>
+    readonly port: Maybe<IntQueryOperatorInput>
+    readonly host: Maybe<StringQueryOperatorInput>
     readonly polyfill: Maybe<BooleanQueryOperatorInput>
     readonly pathPrefix: Maybe<StringQueryOperatorInput>
     readonly id: Maybe<StringQueryOperatorInput>
@@ -2401,15 +2409,15 @@ declare namespace GatsbyTypes {
     readonly internalComponentName: Scalars["String"]
     readonly componentChunkName: Scalars["String"]
     readonly matchPath: Maybe<Scalars["String"]>
-    readonly id: Scalars["ID"]
-    readonly parent: Maybe<Node>
-    readonly children: ReadonlyArray<Node>
-    readonly internal: Internal
     readonly isCreatedByStatefulCreatePages: Maybe<Scalars["Boolean"]>
     readonly context: Maybe<SitePageContext>
     readonly pluginCreator: Maybe<SitePlugin>
     readonly pluginCreatorId: Maybe<Scalars["String"]>
     readonly componentPath: Maybe<Scalars["String"]>
+    readonly id: Scalars["ID"]
+    readonly parent: Maybe<Node>
+    readonly children: ReadonlyArray<Node>
+    readonly internal: Internal
   }
 
   type SitePageConnection = {
@@ -2507,92 +2515,6 @@ declare namespace GatsbyTypes {
     | "internalComponentName"
     | "componentChunkName"
     | "matchPath"
-    | "id"
-    | "parent.id"
-    | "parent.parent.id"
-    | "parent.parent.parent.id"
-    | "parent.parent.parent.children"
-    | "parent.parent.children"
-    | "parent.parent.children.id"
-    | "parent.parent.children.children"
-    | "parent.parent.internal.content"
-    | "parent.parent.internal.contentDigest"
-    | "parent.parent.internal.description"
-    | "parent.parent.internal.fieldOwners"
-    | "parent.parent.internal.ignoreType"
-    | "parent.parent.internal.mediaType"
-    | "parent.parent.internal.owner"
-    | "parent.parent.internal.type"
-    | "parent.children"
-    | "parent.children.id"
-    | "parent.children.parent.id"
-    | "parent.children.parent.children"
-    | "parent.children.children"
-    | "parent.children.children.id"
-    | "parent.children.children.children"
-    | "parent.children.internal.content"
-    | "parent.children.internal.contentDigest"
-    | "parent.children.internal.description"
-    | "parent.children.internal.fieldOwners"
-    | "parent.children.internal.ignoreType"
-    | "parent.children.internal.mediaType"
-    | "parent.children.internal.owner"
-    | "parent.children.internal.type"
-    | "parent.internal.content"
-    | "parent.internal.contentDigest"
-    | "parent.internal.description"
-    | "parent.internal.fieldOwners"
-    | "parent.internal.ignoreType"
-    | "parent.internal.mediaType"
-    | "parent.internal.owner"
-    | "parent.internal.type"
-    | "children"
-    | "children.id"
-    | "children.parent.id"
-    | "children.parent.parent.id"
-    | "children.parent.parent.children"
-    | "children.parent.children"
-    | "children.parent.children.id"
-    | "children.parent.children.children"
-    | "children.parent.internal.content"
-    | "children.parent.internal.contentDigest"
-    | "children.parent.internal.description"
-    | "children.parent.internal.fieldOwners"
-    | "children.parent.internal.ignoreType"
-    | "children.parent.internal.mediaType"
-    | "children.parent.internal.owner"
-    | "children.parent.internal.type"
-    | "children.children"
-    | "children.children.id"
-    | "children.children.parent.id"
-    | "children.children.parent.children"
-    | "children.children.children"
-    | "children.children.children.id"
-    | "children.children.children.children"
-    | "children.children.internal.content"
-    | "children.children.internal.contentDigest"
-    | "children.children.internal.description"
-    | "children.children.internal.fieldOwners"
-    | "children.children.internal.ignoreType"
-    | "children.children.internal.mediaType"
-    | "children.children.internal.owner"
-    | "children.children.internal.type"
-    | "children.internal.content"
-    | "children.internal.contentDigest"
-    | "children.internal.description"
-    | "children.internal.fieldOwners"
-    | "children.internal.ignoreType"
-    | "children.internal.mediaType"
-    | "children.internal.owner"
-    | "children.internal.type"
-    | "internal.content"
-    | "internal.contentDigest"
-    | "internal.description"
-    | "internal.fieldOwners"
-    | "internal.ignoreType"
-    | "internal.mediaType"
-    | "internal.owner"
-    | "internal.type"
     | "isCreatedByStatefulCreatePages"
     | "context.slug"
     | "context.previous.fields.slug"
@@ -2724,6 +2646,92 @@ declare namespace GatsbyTypes {
     | "pluginCreator.packageJson.keywords"
     | "pluginCreatorId"
     | "componentPath"
+    | "id"
+    | "parent.id"
+    | "parent.parent.id"
+    | "parent.parent.parent.id"
+    | "parent.parent.parent.children"
+    | "parent.parent.children"
+    | "parent.parent.children.id"
+    | "parent.parent.children.children"
+    | "parent.parent.internal.content"
+    | "parent.parent.internal.contentDigest"
+    | "parent.parent.internal.description"
+    | "parent.parent.internal.fieldOwners"
+    | "parent.parent.internal.ignoreType"
+    | "parent.parent.internal.mediaType"
+    | "parent.parent.internal.owner"
+    | "parent.parent.internal.type"
+    | "parent.children"
+    | "parent.children.id"
+    | "parent.children.parent.id"
+    | "parent.children.parent.children"
+    | "parent.children.children"
+    | "parent.children.children.id"
+    | "parent.children.children.children"
+    | "parent.children.internal.content"
+    | "parent.children.internal.contentDigest"
+    | "parent.children.internal.description"
+    | "parent.children.internal.fieldOwners"
+    | "parent.children.internal.ignoreType"
+    | "parent.children.internal.mediaType"
+    | "parent.children.internal.owner"
+    | "parent.children.internal.type"
+    | "parent.internal.content"
+    | "parent.internal.contentDigest"
+    | "parent.internal.description"
+    | "parent.internal.fieldOwners"
+    | "parent.internal.ignoreType"
+    | "parent.internal.mediaType"
+    | "parent.internal.owner"
+    | "parent.internal.type"
+    | "children"
+    | "children.id"
+    | "children.parent.id"
+    | "children.parent.parent.id"
+    | "children.parent.parent.children"
+    | "children.parent.children"
+    | "children.parent.children.id"
+    | "children.parent.children.children"
+    | "children.parent.internal.content"
+    | "children.parent.internal.contentDigest"
+    | "children.parent.internal.description"
+    | "children.parent.internal.fieldOwners"
+    | "children.parent.internal.ignoreType"
+    | "children.parent.internal.mediaType"
+    | "children.parent.internal.owner"
+    | "children.parent.internal.type"
+    | "children.children"
+    | "children.children.id"
+    | "children.children.parent.id"
+    | "children.children.parent.children"
+    | "children.children.children"
+    | "children.children.children.id"
+    | "children.children.children.children"
+    | "children.children.internal.content"
+    | "children.children.internal.contentDigest"
+    | "children.children.internal.description"
+    | "children.children.internal.fieldOwners"
+    | "children.children.internal.ignoreType"
+    | "children.children.internal.mediaType"
+    | "children.children.internal.owner"
+    | "children.children.internal.type"
+    | "children.internal.content"
+    | "children.internal.contentDigest"
+    | "children.internal.description"
+    | "children.internal.fieldOwners"
+    | "children.internal.ignoreType"
+    | "children.internal.mediaType"
+    | "children.internal.owner"
+    | "children.internal.type"
+    | "internal.content"
+    | "internal.contentDigest"
+    | "internal.description"
+    | "internal.fieldOwners"
+    | "internal.ignoreType"
+    | "internal.mediaType"
+    | "internal.owner"
+    | "internal.type"
 
   type SitePageFilterInput = {
     readonly path: Maybe<StringQueryOperatorInput>
@@ -2731,15 +2739,15 @@ declare namespace GatsbyTypes {
     readonly internalComponentName: Maybe<StringQueryOperatorInput>
     readonly componentChunkName: Maybe<StringQueryOperatorInput>
     readonly matchPath: Maybe<StringQueryOperatorInput>
-    readonly id: Maybe<StringQueryOperatorInput>
-    readonly parent: Maybe<NodeFilterInput>
-    readonly children: Maybe<NodeFilterListInput>
-    readonly internal: Maybe<InternalFilterInput>
     readonly isCreatedByStatefulCreatePages: Maybe<BooleanQueryOperatorInput>
     readonly context: Maybe<SitePageContextFilterInput>
     readonly pluginCreator: Maybe<SitePluginFilterInput>
     readonly pluginCreatorId: Maybe<StringQueryOperatorInput>
     readonly componentPath: Maybe<StringQueryOperatorInput>
+    readonly id: Maybe<StringQueryOperatorInput>
+    readonly parent: Maybe<NodeFilterInput>
+    readonly children: Maybe<NodeFilterListInput>
+    readonly internal: Maybe<InternalFilterInput>
   }
 
   type SitePageGroupConnection = {
@@ -3346,26 +3354,6 @@ declare namespace GatsbyTypes {
     readonly quality: Maybe<Scalars["Int"]>
   }
 
-  type NotFoundPageQueryVariables = Exact<{ [key: string]: never }>
-
-  type NotFoundPageQuery = {
-    readonly site: Maybe<{
-      readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, "title">>
-    }>
-  }
-
-  type SEOQueryVariables = Exact<{ [key: string]: never }>
-
-  type SEOQuery = {
-    readonly site: Maybe<{
-      readonly siteMetadata: Maybe<
-        Pick<SiteSiteMetadata, "title" | "description"> & {
-          readonly social: Maybe<Pick<SiteSiteMetadataSocial, "twitter">>
-        }
-      >
-    }>
-  }
-
   type BlogPostBySlugQueryVariables = Exact<{
     slug: Scalars["String"]
   }>
@@ -3384,6 +3372,14 @@ declare namespace GatsbyTypes {
     >
   }
 
+  type NotFoundPageQueryVariables = Exact<{ [key: string]: never }>
+
+  type NotFoundPageQuery = {
+    readonly site: Maybe<{
+      readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, "title">>
+    }>
+  }
+
   type BlogIndexQueryVariables = Exact<{ [key: string]: never }>
 
   type BlogIndexQuery = {
@@ -3400,6 +3396,26 @@ declare namespace GatsbyTypes {
         }
       }>
     }
+  }
+
+  type PagesQueryQueryVariables = Exact<{ [key: string]: never }>
+
+  type PagesQueryQuery = {
+    readonly allSitePage: {
+      readonly nodes: ReadonlyArray<Pick<SitePage, "path">>
+    }
+  }
+
+  type SEOQueryVariables = Exact<{ [key: string]: never }>
+
+  type SEOQuery = {
+    readonly site: Maybe<{
+      readonly siteMetadata: Maybe<
+        Pick<SiteSiteMetadata, "title" | "description"> & {
+          readonly social: Maybe<Pick<SiteSiteMetadataSocial, "twitter">>
+        }
+      >
+    }>
   }
 
   type GatsbyImageSharpFixedFragment = Pick<
