@@ -62,6 +62,17 @@ def flat_partition(n, length)
 end
 ```
 
+### 追記：より良い書き方
+
+同僚からこう書くと良いのではという指摘をもらった。たしかにシンプルで良さそう。
+
+```ruby
+def flat_partition(n, length)
+  quotient, remainder = n.divmod(length)
+  Array.new(remainder, quotient + 1) + Array.new(length - remainder, quotient)
+end
+```
+
 ## 重み付きの分割
 
 《概ね均等な分割》があるなら意図的に《均等ではなくした分割》、つまり重み付き分割も考えることができる。インターフェイスとしては以下のような感じだろうか。
