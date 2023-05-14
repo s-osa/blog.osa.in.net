@@ -11,6 +11,4 @@ yarn develop
 
 ## Deploy
 
-```fish
-yarn build; and envchain <namespace> yarn deploy -y
-```
+GitHub Actions deploys `master` branch automatically.
