@@ -126,7 +126,7 @@ https://amzn.to/42QHM7Y
 
 ### 『SQL and Relational Theory』
 
-`T`, `P` など無味乾燥な名前が並んでいる。
+`T`, `P` など無味乾燥な名前が並んでいる。<br>
 https://amzn.to/3M6XQvw
 
 ## おわりに
