@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { WindowLocation } from "@reach/router"
 
-import "./common.scss"
+import "./common.css"
 import { rhythm } from "../utils/typography"
 
 const Layout: React.FC<{
